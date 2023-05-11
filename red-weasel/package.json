@@ -22,7 +22,8 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "sanity": "^3.10.1",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "swr": "^2.1.5"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
