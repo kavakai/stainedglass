@@ -1,4 +1,0 @@
-{
-  "preset": ["@babel/preset-react"],
-  "plugins": []
-}
