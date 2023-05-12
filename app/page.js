@@ -1,5 +1,6 @@
-import Image from 'next/image'
-import Home from './home'
+import React from 'react';
+
+import Home from './index'
 
 export default function Page() {
   return (
