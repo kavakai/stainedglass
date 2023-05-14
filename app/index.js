@@ -3,11 +3,10 @@ import React from 'react';
 import { client } from '@/lib/client';
 import { Product, HeroBanner, FooterBanner } from '@/components';
 
-const Home = async ({ products, bannerData }) => {
+const Home = async () => {
   const data = await (getData());
   return (
     <>
-    {console.log(data, "in component")}
       <HeroBanner />
 
       <div className='products-heading'>
@@ -16,7 +15,7 @@ const Home = async ({ products, bannerData }) => {
       </div>
 
       <div className='products-container'>
-        {data?.map((product) => product.name)}
+        {data.products?.map((product) => product.name)}
       </div>
 
       <FooterBanner />
@@ -26,17 +25,19 @@ const Home = async ({ products, bannerData }) => {
 
 
 export const getData = async () => {
+  const sanityData = {
+    products: [],
+    bannerData: []
+  }
+
   const query = '*[_type == "product"]';
   const products = await client.fetch(query)
-  .then((data) => data);
+  .then((data) => sanityData.products = data);
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery)
-  .then((data) => data);
+  .then((data) => sanityData.bannerData = data);
 
-  console.log(products, "prods")
-
-
-  return products;
+  return sanityData;
 };
 
 export default Home
