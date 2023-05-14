@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { client } from '@/lib/client';
+import { client, urlFor } from '@/lib/client';
 import { Product, HeroBanner, FooterBanner } from '@/components';
 
 const Home = async () => {
   const data = await (getData());
+
   return (
     <>
-      <HeroBanner />
+      <HeroBanner bannerData={data.bannerData.length && data.bannerData[0]} />
 
       <div className='products-heading'>
         <h2>Best Selling Products</h2>
@@ -37,7 +38,7 @@ export const getData = async () => {
   const bannerData = await client.fetch(bannerQuery)
   .then((data) => sanityData.bannerData = data);
 
-  return sanityData;
+  return (sanityData);
 };
 
 export default Home
