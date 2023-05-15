@@ -19,7 +19,7 @@ const Home = async () => {
         {data.products?.map((product) => <Product key={product._id} product={product}/>)}
       </div>
 
-      <FooterBanner />
+      <FooterBanner footerBanner={data.bannerData && data.bannerData[0]} />
     </>
   )
 };
