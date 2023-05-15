@@ -16,7 +16,7 @@ const Home = async () => {
       </div>
 
       <div className='products-container'>
-        {data.products?.map((product) => product.name)}
+        {data.products?.map((product) => <Product key={product._id} product={product}/>)}
       </div>
 
       <FooterBanner />
