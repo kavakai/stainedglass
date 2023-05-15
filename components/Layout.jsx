@@ -1,8 +1,23 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
+import { Footer, Navbar } from '.';
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <div>Layout</div>
+    <div className='layout'>
+      <Head>
+        <title>J.Ryan Glass</title>
+      </Head>
+      <header>
+        <Navbar />
+      </header>
+      <main className='main-container'>
+        {children}
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   )
 }
 
