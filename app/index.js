@@ -2,6 +2,7 @@ import React from 'react';
 
 import { client, urlFor } from '@/lib/client';
 import { Product, HeroBanner, FooterBanner } from '@/components';
+import product from '@/red-weasel/schemas/product';
 
 const Home = async () => {
   const data = await (getData());
